@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Об'єднаний Дашборд Сонця</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #06020a;
+            scroll-behavior: smooth; /* Плавний скрол */
+        }
+        
+        .iframe-container {
+            width: 100%;
+            height: 100vh; /* Кожен дашборд займає рівно 100% висоти екрану */
+            display: block;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ПЕРША СТОРІНКА (ЖИВИЙ РЕЖИМ) -->
+    <div class="iframe-container">
+        <iframe src="https://lavandaaudit.github.io/sun-ibonarium-cosmo-dynamics-lab-live/" title="Sun Ibonarium Cosmo Dynamics Lab Live"></iframe>
+    </div>
+
+    <!-- ДРУГА СТОРІНКА (АРХІВ ЗА 30 ДНІВ) -->
+    <div class="iframe-container">
+        <iframe src="https://lavandaaudit.github.io/sun.30/" title="Sun 30 Days Archive"></iframe>
+    </div>
+
+</body>
+</html>
