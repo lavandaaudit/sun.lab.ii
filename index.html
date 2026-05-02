@@ -3,21 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Об'єднаний Дашборд Сонця</title>
+    <title>IBONARIUM · COSMO · DYNAMICS · HUB</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&family=JetBrains+Mono:wght@300;500&display=swap" rel="stylesheet">
+    
     <style>
-        body, html {
+        :root {
+            --bg: #030305;
+            --accent: #00e5ff;
+            --secondary: #ff007a;
+            --glass: rgba(0, 10, 20, 0.7);
+            --border: rgba(0, 229, 255, 0.2);
+            --font-main: 'Outfit', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #06020a;
-            scroll-behavior: smooth; /* Плавний скрол */
+            box-sizing: border-box;
         }
-        
-        .iframe-container {
+
+        html, body {
             width: 100%;
-            height: 100vh; /* Кожен дашборд займає рівно 100% висоти екрану */
-            display: block;
+            min-height: 100vh;
+            background-color: var(--bg);
+            color: #fff;
+            font-family: var(--font-main);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Container for sections */
+        .hub-container {
+            width: 100%;
+        }
+
+        /* Section Styling */
+        section {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background: #000;
+        }
+
+        /* Fixed height for Lightmeter to show all data */
+        #lightmeter {
+            height: 1600px;
         }
 
         iframe {
@@ -25,19 +58,39 @@
             height: 100%;
             border: none;
             display: block;
+            background: #000;
+        }
+
+        /* Custom Scrollbar */
+        body::-webkit-scrollbar {
+            width: 8px;
+        }
+        body::-webkit-scrollbar-track {
+            background: #06020a;
+        }
+        body::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 10px;
         }
     </style>
 </head>
 <body>
 
-    <!-- ПЕРША СТОРІНКА (ЖИВИЙ РЕЖИМ) -->
-    <div class="iframe-container">
-        <iframe src="https://lavandaaudit.github.io/sun-ibonarium-cosmo-dynamics-lab-live/" title="Sun Ibonarium Cosmo Dynamics Lab Live"></iframe>
-    </div>
+    <div class="hub-container">
+        <!-- PAGE 1: SOLAR LIVE -->
+        <section id="live">
+            <iframe src="https://lavandaaudit.github.io/sun-ibonarium-cosmo-dynamics-lab-live/" title="Sun Ibonarium Cosmo Dynamics Lab Live" scrolling="no" style="overflow: hidden;"></iframe>
+        </section>
 
-    <!-- ДРУГА СТОРІНКА (АРХІВ ЗА 30 ДНІВ) -->
-    <div class="iframe-container">
-        <iframe src="https://lavandaaudit.github.io/sun.30/" title="Sun 30 Days Archive"></iframe>
+        <!-- PAGE 2: ARCHIVE -->
+        <section id="archive">
+            <iframe src="https://lavandaaudit.github.io/sun.30/" title="Sun 30 Days Archive" scrolling="no" style="overflow: hidden;"></iframe>
+        </section>
+
+        <!-- PAGE 3: LIGHTMETER -->
+        <section id="lightmeter">
+            <iframe src="https://lavandaaudit.github.io/svitlometr.2/" title="Ibonarium Lightmeter 2.0" scrolling="no" style="overflow: hidden;"></iframe>
+        </section>
     </div>
 
 </body>
